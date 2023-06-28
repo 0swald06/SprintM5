@@ -1,4 +1,4 @@
-package com.example.sprintm5.adapters
+package com.example.sprintm5.modelos
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,10 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sprintm5.R
-import com.example.sprintm5.modelos.ItemCarrito
 
 class CarritoAdapter(val productos: ArrayList<ItemCarrito>):RecyclerView.Adapter<CarritoAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarritoAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         var vista=LayoutInflater.from(parent.context).inflate(R.layout.item_carrito,parent,false)
         return  ViewHolder(vista)
@@ -17,7 +16,7 @@ class CarritoAdapter(val productos: ArrayList<ItemCarrito>):RecyclerView.Adapter
     override fun getItemCount(): Int {
         return productos.size
     }
-    override fun onBindViewHolder(holder: CarritoAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(productos[position])
     }
     class ViewHolder (itemView: View):RecyclerView.ViewHolder(itemView){

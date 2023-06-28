@@ -1,11 +1,9 @@
-package com.example.sprintm5
+package com.example.sprintm5.modelos
 
 class ItemList {
     // lista de datos
     private val itemsPairs: MutableList<Pair<String, String>> = mutableListOf()
 
-    // agrego  para poder que las palabras no borren la anterior y utilzar esta variable en clase SharedPrefences
-    // como la varibles esta privada hago un funcion que retorne la lista para poder utilzarla desde preferencias
     fun getItemsPairs(): MutableList<Pair<String, String>> {
         return itemsPairs
     }

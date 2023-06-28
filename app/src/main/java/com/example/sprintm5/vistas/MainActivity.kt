@@ -1,8 +1,8 @@
-package com.example.sprintm5
+package com.example.sprintm5.vistas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.sprintm5.vistas.fragment_home
+import com.example.sprintm5.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

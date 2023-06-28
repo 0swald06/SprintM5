@@ -16,6 +16,6 @@
     </fragment>
     <activity
         android:id="@+id/verProducto"
-        android:name="com.example.sprintm5.VerProducto"
+        android:name="com.example.sprintm5.vistas.VerProducto"
         android:label="VerProducto" />
 </navigation>

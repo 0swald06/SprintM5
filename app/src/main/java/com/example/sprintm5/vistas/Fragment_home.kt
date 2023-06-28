@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sprintm5.R
-import com.example.sprintm5.adapters.ProductoAdapter
+import com.example.sprintm5.modelos.ProductoAdapter
 import com.example.sprintm5.databinding.FragmentHomeBinding
 import com.example.sprintm5.modelos.ProductoData
 

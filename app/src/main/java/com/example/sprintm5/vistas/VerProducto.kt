@@ -1,4 +1,4 @@
-package com.example.sprintm5
+package com.example.sprintm5.vistas
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,12 +7,11 @@ import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.appcompat.widget.Toolbar
+import com.example.sprintm5.modelos.ItemList
+import com.example.sprintm5.modelos.Preferences
+import com.example.sprintm5.R
 import com.example.sprintm5.databinding.ActivityVerProductoBinding
-import com.example.sprintm5.modelos.ItemCarrito
 import com.example.sprintm5.modelos.ProductoData
 
 class VerProducto : AppCompatActivity() {
