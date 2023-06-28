@@ -7,19 +7,17 @@ import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import com.example.sprintm5.Ipresentador
 import com.example.sprintm5.modelos.ItemList
 import com.example.sprintm5.modelos.Preferences
 import com.example.sprintm5.R
 import com.example.sprintm5.databinding.ActivityVerProductoBinding
 import com.example.sprintm5.modelos.ProductoData
 
-class VerProducto : AppCompatActivity() {
+class VerProducto : AppCompatActivity(),Ipresentador {
 
-    lateinit var btnMas:Button
-    lateinit var btnMenos:Button
-    lateinit var txtCantidad:EditText
-    lateinit var btnComprar:Button
     private lateinit var  preferences: Preferences
     private lateinit var  mBinding: ActivityVerProductoBinding
 
@@ -45,30 +43,17 @@ class VerProducto : AppCompatActivity() {
         mBinding.descripcionProducto.setText(descripcion)
         mBinding.precioProducto.setText(precio)
 
-        btnMas = findViewById(R.id.btnMasItem)
-        btnMenos = findViewById(R.id.btnMenosItem)
-        btnComprar = findViewById(R.id.btnAdd)
-        val productos = ProductoData().allProductos()
-
-
-        btnMas.setOnClickListener{
-            txtCantidad.setText((txtCantidad.text.toString().toInt()+1).toString())
-        }
-        btnMas.setOnClickListener{
-            if (txtCantidad.text.toString().toInt()>2) {
-                txtCantidad.setText((txtCantidad.text.toString().toInt() - 1).toString())
-            }
-        }
-
-
-        btnComprar.setOnClickListener{
+        mBinding.btnAdd.setOnClickListener{
             guardaDatos()
 
-           var intent=Intent(this, Carrito::class.java)
-
-
-            startActivity(intent)
         }
+        mBinding.pagar.setOnClickListener {
+
+             var intent=Intent(this, Carrito::class.java)
+
+             startActivity(intent)
+            }
+
     }
     fun guardaDatos(){
         preferences = Preferences(this)
@@ -93,6 +78,21 @@ class VerProducto : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun displayConfirmationMessageAdd() {
+        val toast = Toast.makeText(applicationContext, "Se agrego el producto", Toast.LENGTH_LONG)
+        toast.show()
+    }
+
+    override fun displayErrorMessageAdd() {
+        val toast = Toast.makeText(applicationContext, "No se agrego el producto", Toast.LENGTH_LONG)
+        toast.show()
+    }
+
+    override fun displayConfirmationMessageDelete() {
+        val toast = Toast.makeText(applicationContext, "Se elimino el carrito", Toast.LENGTH_LONG)
+        toast.show()
     }
 
 }

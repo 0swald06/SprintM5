@@ -15,7 +15,7 @@ class Preferences(context: Context) {
 
     private val  sharedPreferences : SharedPreferences=
         context.getSharedPreferences(SHARED_PREFERENCES_NAME,Context.MODE_PRIVATE)
-    private val gson = Gson()
+
 
     fun saveItemList(itemList: ItemList){
 
