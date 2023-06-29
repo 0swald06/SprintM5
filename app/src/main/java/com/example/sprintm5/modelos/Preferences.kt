@@ -7,11 +7,12 @@ import com.google.gson.reflect.TypeToken
 
 class Preferences(context: Context) {
 
+
     companion object {
         private const val SHARED_PREFERENCES_NAME = "sprintm5"
         private const val  KEY_ITEM_LIST= "ItemList"
-
     }
+
 
     private val  sharedPreferences : SharedPreferences=
         context.getSharedPreferences(SHARED_PREFERENCES_NAME,Context.MODE_PRIVATE)

@@ -17,6 +17,7 @@ class fragment_home : Fragment() {
 
 
     private lateinit var binding: FragmentHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {

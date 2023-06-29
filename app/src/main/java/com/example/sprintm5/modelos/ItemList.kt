@@ -1,14 +1,19 @@
 package com.example.sprintm5.modelos
 
+import android.util.Log
+
 class ItemList {
     // lista de datos
     private val itemsPairs: MutableList<Pair<String, String>> = mutableListOf()
 
     fun getItemsPairs(): MutableList<Pair<String, String>> {
+        Log.d("entro6", itemsPairs.toString())
         return itemsPairs
     }
 
     fun addItems(key: String, value: String) {
+        Log.d("entro2", key)
+        Log.d("entro3", value)
 
         itemsPairs.add(Pair(key, value))
     }
